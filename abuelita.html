@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación 80 Años - Noemi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #ffd4e5 0%, #ffe0ed 50%, #ffd9e8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .invitation-container {
+            max-width: 800px;
+            width: 100%;
+            background: linear-gradient(to bottom, #fff0f5 0%, #ffe4ec 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(219, 112, 147, 0.4);
+            overflow: hidden;
+            position: relative;
+            border: 3px solid rgba(255, 255, 255, 0.6);
+        }
+        
+        .top-decoration {
+            height: 10px;
+            background: linear-gradient(90deg, #ffa6c9, #ffb8d4, #ffa6c9);
+        }
+        
+        .rose-corner {
+            position: absolute;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s infinite ease-in-out;
+            opacity: 0.3;
+        }
+        
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 60%; animation-delay: 1.5s; }
+        .heart:nth-child(5) { left: 75%; animation-delay: 0.5s; }
+        .heart:nth-child(6) { left: 90%; animation-delay: 2.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .rose-top-left {
+            top: -20px;
+            left: -20px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #ffc9e0 0%, #ffb6d9 40%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .rose-bottom-right {
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #ffd4e5 0%, #ffc9e0 40%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .content {
+            padding: 50px 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .surprise-banner {
+            background: linear-gradient(135deg, #e1c0c3 0%, #a45a68 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: -50px -40px 40px -40px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .surprise-emoji {
+            font-size: 32px;
+            margin: 0 10px;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .celebrating {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: #c94b7a;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .number {
+            font-family: 'Great Vibes', cursive;
+            font-size: 120px;
+            color: #ff6b9d;
+            line-height: 1;
+            margin: 10px 0;
+            text-shadow: 3px 3px 6px rgba(255, 107, 157, 0.4);
+            animation: glow 3s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 3px 3px 6px rgba(255, 107, 157, 0.4); }
+            100% { text-shadow: 3px 3px 15px rgba(255, 107, 157, 0.6); }
+        }
+        
+        .years {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #8b5a7d;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 72px;
+            color: #ff6b9d;
+            text-align: center;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+        }
+        
+        .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #6b5b6e;
+            text-align: center;
+            line-height: 1.8;
+            font-style: italic;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255, 182, 217, 0.1), rgba(255, 201, 224, 0.1));
+            border-left: 4px solid #ff99c2;
+            border-radius: 10px;
+        }
+        
+        .details {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .detail-item {
+            margin: 25px 0;
+            font-size: 22px;
+            color: #5a4a5d;
+        }
+        
+        .detail-icon {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #c94b7a;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        
+        .detail-info {
+            font-size: 20px;
+            color: #6b5b6e;
+        }
+        
+        .roses-divider {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 32px;
+            color: #ff99c2;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #ffe8f0;
+        }
+        
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #8b5a7d;
+            font-style: italic;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3f8 0%, #ffe8f3 100%);
+            border: 3px dashed #ff6b9d;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .warning-text {
+            font-size: 22px;
+            color: #c94b7a;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        
+        .warning-subtext {
+            font-size: 18px;
+            color: #8b5a7d;
+            font-style: italic;
+        }
+        
+        .whatsapp-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+            border: 3px solid #25d366;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .whatsapp-title {
+            font-size: 24px;
+            color: #128c7e;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .whatsapp-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .decorative-corner {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            pointer-events: none;
+        }
+        
+        .corner-top-left {
+            top: 15px;
+            left: 15px;
+            border-top: 4px solid #ffa6c9;
+            border-left: 4px solid #ffa6c9;
+            border-radius: 10px 0 0 0;
+        }
+        
+        .corner-top-right {
+            top: 15px;
+            right: 15px;
+            border-top: 4px solid #ffa6c9;
+            border-right: 4px solid #ffa6c9;
+            border-radius: 0 10px 0 0;
+        }
+        
+        .corner-bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-bottom: 4px solid #ffa6c9;
+            border-left: 4px solid #ffa6c9;
+            border-radius: 0 0 0 10px;
+        }
+        
+        .corner-bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-bottom: 4px solid #ffa6c9;
+            border-right: 4px solid #ffa6c9;
+            border-radius: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <div class="top-decoration"></div>
+        <div class="rose-corner rose-top-left"></div>
+        <div class="rose-corner rose-bottom-right"></div>
+        
+        <div class="floating-hearts">
+            <div class="heart" style="top: 10%;">💗</div>
+            <div class="heart" style="top: 30%;">🌸</div>
+            <div class="heart" style="top: 50%;">💕</div>
+            <div class="heart" style="top: 70%;">🌹</div>
+            <div class="heart" style="top: 20%;">✨</div>
+            <div class="heart" style="top: 60%;">💖</div>
+        </div>
+        
+        <div class="decorative-corner corner-top-left"></div>
+        <div class="decorative-corner corner-top-right"></div>
+        <div class="decorative-corner corner-bottom-left"></div>
+        <div class="decorative-corner corner-bottom-right"></div>
+        
+        <div class="content">
+            <div class="surprise-banner">
+                <span class="surprise-emoji">💗</span>
+                ¡Es una Fiesta Sorpresa!
+                <span class="surprise-emoji">💗</span>
+            </div>
+            
+            <div class="title">
+                <div class="celebrating">Celebrando</div>
+                <div class="number">80</div>
+                <div class="years">Años de Vida</div>
+            </div>
+            
+            <div class="name">Abuelita Mery Noemi</div>
+            
+            <div class="roses-divider">🌹 🌹 🌹</div>
+            
+            <div class="quote">
+                "La verdadera riqueza de la vida no está en los años que vivimos, sino en el amor que sembramos y las sonrisas que cosechamos. Hoy honramos 80 años de una mujer que nos ha enseñado el verdadero significado de vivir con el corazón"
+            </div>
+            
+            <div class="roses-divider">🌹 🌹 🌹</div>
+            
+            <div class="details">
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <div class="detail-label">Fecha</div>
+                    <div class="detail-info">20 de Diciembre de 2025</div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">🕕</span>
+                    <div class="detail-label">Hora</div>
+                    <div class="detail-info">7:00 PM</div>
+                </div>
+                
+                <div class="detail-item">
+                    <span class="detail-icon">📍</span>
+                    <div class="detail-label">Lugar</div>
+                    <div class="detail-info">Cl. 28 Sur #4-24, San Cristóbal, Bogotá</div>
+                </div>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-text">⚠️ RECUERDA: ¡ES SORPRESA! ⚠️</div>
+                <div class="warning-subtext">Por favor, no menciones nada a mi abuelita Noemí</div>
+                <div class="warning-subtext">Tu discreción hará este momento aún más especial 💕</div>
+            </div>
+            
+            <div class="roses-divider">🌹 ✨ 🌹</div>
+            
+            <div class="whatsapp-section">
+                <div class="whatsapp-title">Confirma tu Asistencia</div>
+                <div class="warning-subtext">Por favor confirma antes del 15 de Diciembre</div>
+                <a href="https://wa.me/3124233951?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20fiesta%20sorpresa%20de%20la%20Abuelita%20Noemi%20🌹" class="whatsapp-button">
+                    <span class="whatsapp-icon">💬</span>
+                    Confirmar por WhatsApp
+                </a>
+            </div>
+            
+            <div class="footer">
+                <div class="footer-text">
+                    Tu presencia será el mejor regalo 🌹
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
